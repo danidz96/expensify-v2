@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import moment from 'moment';
+
+const now = moment().format('MMM Do, YYYY');
+console.log(now);
 
 export class ExpenseForm extends Component {
 	state = {
