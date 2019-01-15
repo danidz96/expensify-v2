@@ -8,14 +8,18 @@ moment.locale('es');
 console.log(moment().format('LL'));
 
 export class ExpenseForm extends Component {
-	state = {
-		description: '',
-		amount: '',
-		note: '',
-		createdAt: moment(),
-		focused: false,
-		error: ''
-	};
+	constructor(props) {
+		super();
+
+		this.state = {
+			description: props.expense ? props.expense.description : '',
+			amount: props.expense ? (props.expense.amount / 100).toString() : '',
+			note: props.expense ? props.expense.note : '',
+			createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+			focused: false,
+			error: ''
+		};
+	}
 
 	onDescriptionChange = (e) => {
 		const description = e.target.value;
@@ -74,7 +78,13 @@ export class ExpenseForm extends Component {
 			<div>
 				{this.state.error && <p>{this.state.error}</p>}
 				<form onSubmit={this.onSubmit}>
-					<input type="text" placeholder="Description" autoFocus value={this.state.description} onChange={this.onDescriptionChange} />
+					<input
+						type="text"
+						placeholder="Description"
+						autoFocus
+						value={this.state.description}
+						onChange={this.onDescriptionChange}
+					/>
 					<input type="text" placeholder="Amount" value={this.state.amount} onChange={this.onAmountChange} />
 					<SingleDatePicker
 						date={this.state.createdAt}
@@ -85,7 +95,11 @@ export class ExpenseForm extends Component {
 						numberOfMonths={1}
 						isOutsideRange={() => false}
 					/>
-					<textarea placeholder="Add a note for your expense (optional)" value={this.state.note} onChange={this.onNoteChange} />
+					<textarea
+						placeholder="Add a note for your expense (optional)"
+						value={this.state.note}
+						onChange={this.onNoteChange}
+					/>
 					<button>Add Expense</button>
 				</form>
 			</div>
