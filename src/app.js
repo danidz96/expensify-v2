@@ -6,8 +6,10 @@ import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
-import 'normalize.css/normalize.css';
 import './styles/styles.scss';
+import 'normalize.css/normalize.css';
+import 'react-dates/lib/css/_datepicker.css';
+import 'react-dates/initialize';
 
 const store = configureStore();
 
@@ -17,16 +19,15 @@ store.dispatch(addExpense({ description: 'Restaurant', amount: 30, createdAt: 5 
 store.dispatch(addExpense({ description: 'Cinema', amount: 20, createdAt: 3 }));
 store.dispatch(addExpense({ description: 'New PC', amount: 1500, createdAt: 4 }));
 
-
 const state = store.getState();
 console.warn(state);
 
 console.log(getVisibleExpenses(state.expenses, state.filters));
 
 const app = (
-  <Provider store={store}>
-    <AppRouter />
-  </Provider>
-)
+	<Provider store={store}>
+		<AppRouter />
+	</Provider>
+);
 
 ReactDOM.render(app, document.getElementById('app'));

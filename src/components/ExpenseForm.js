@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
-import 'react-dates/initialize';
 
 moment.locale('es');
 console.log(moment().format('LL'));
