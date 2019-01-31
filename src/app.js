@@ -10,6 +10,7 @@ import './styles/styles.scss';
 import 'normalize.css/normalize.css';
 import 'react-dates/lib/css/_datepicker.css';
 import 'react-dates/initialize';
+import numeral from 'numeral';
 
 const store = configureStore();
 
@@ -23,6 +24,25 @@ const state = store.getState();
 console.warn(state);
 
 console.log(getVisibleExpenses(state.expenses, state.filters));
+
+numeral.register('locale', 'es', {
+	delimiters: {
+		thousands: ' ',
+		decimal: ','
+	},
+	abbreviations: {
+		thousand: 'k',
+		million: 'm',
+		billion: 'b',
+		trillion: 't'
+	},
+	currency: {
+		symbol: '€'
+	}
+});
+
+// switch between locales
+numeral.locale('es');
 
 const app = (
 	<Provider store={store}>
