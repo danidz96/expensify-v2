@@ -1,4 +1,5 @@
 /node_modules
 */playground
 /public/dist
-firebase.js
+.env
+.env.test
