@@ -15,7 +15,7 @@ const store = configureStore();
 
 numeral.register('locale', 'es', {
 	delimiters: {
-		thousands: ' ',
+		thousands: '.',
 		decimal: ','
 	},
 	abbreviations: {
