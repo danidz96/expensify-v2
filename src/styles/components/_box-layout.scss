@@ -1,0 +1,28 @@
+.box-layout {
+	background: linear-gradient(to left, #fc466b, #3f5efb);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__box {
+		background: white;
+		height: 30rem;
+		width: 40rem;
+		border-radius: $border-1;
+		text-align: center;
+		padding: $l-size $m-size;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		button {
+			margin-top: auto;
+		}
+	}
+
+	&__title {
+		margin: 0 0 $m-size 0;
+		font-size: $font-size-large;
+	}
+}
