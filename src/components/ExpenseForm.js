@@ -79,12 +79,20 @@ export class ExpenseForm extends Component {
 					<input
 						type="text"
 						placeholder="Description"
+						className="text-input"
 						autoFocus
 						value={this.state.description}
 						onChange={this.onDescriptionChange}
 					/>
-					<input type="text" placeholder="Amount" value={this.state.amount} onChange={this.onAmountChange} />
+					<input
+						type="text"
+						className="text-input"
+						placeholder="Amount"
+						value={this.state.amount}
+						onChange={this.onAmountChange}
+					/>
 					<SingleDatePicker
+						className="dates"
 						date={this.state.createdAt}
 						onDateChange={this.onDateChange}
 						focused={this.state.focused}
@@ -95,6 +103,7 @@ export class ExpenseForm extends Component {
 					/>
 					<textarea
 						placeholder="Add a note for your expense (optional)"
+						className="textarea"
 						value={this.state.note}
 						onChange={this.onNoteChange}
 					/>

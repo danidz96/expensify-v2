@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
 import AddExpensePage from '../components/AddExpensePage';

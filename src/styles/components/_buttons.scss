@@ -1,21 +1,35 @@
 .button {
-	background-color: $blue;
-	color: white;
-	border: none;
 	border-radius: $border;
 	padding: $s-size $m-size;
 	transition: all 0.2s;
-}
+	background-color: $blue;
+	border: none;
+	color: white;
+	text-decoration: none;
 
-button:hover {
-	cursor: pointer;
-	background-color: $blue-dark;
-	transform: translateY(-2px);
-	box-shadow: 0 .4rem 2rem #ccc;
-	box-shadow: 0px .8rem 1.5rem rgba(0, 0, 0, 0.1);
-}
+	&--action {
+		padding: $m-size $l-size;
+		border-radius: 5rem;
+	}
 
-button:active {
-	outline: none;
-	transform: translateY(0);
+	&--link {
+		background: none;
+	}
+
+	&:hover {
+		cursor: pointer;
+		background-color: $blue-dark;
+		transform: translateY(-2px);
+		box-shadow: 0 .4rem 2rem #ccc;
+		box-shadow: 0px .8rem 1.5rem rgba(0, 0, 0, 0.1);
+	}
+
+	&:active {
+		outline: none;
+		transform: translateY(0);
+	}
+
+	&:focus {
+		outline: none;
+	}
 }
