@@ -12,6 +12,15 @@
 		border-radius: 5rem;
 	}
 
+	&--delete {
+		background: red;
+
+		&:hover {
+			transform: none !important;
+			background-color: $red-dark !important;
+		}
+	}
+
 	&--link {
 		background: none;
 	}

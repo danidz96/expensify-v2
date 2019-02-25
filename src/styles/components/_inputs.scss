@@ -19,7 +19,7 @@
 .textarea {
 	@extend .text-input;
 	height: 10rem;
-	width: 40rem;
+	width: 100%;
 }
 
 .DateRangePickerInput__withBorder,
@@ -28,4 +28,8 @@
 	border: 1px solid #cacccd;
 	height: 6rem;
 	padding-top: .6rem;
+}
+
+.SingleDatePickerInput__withBorder {
+	width: 100%;
 }
