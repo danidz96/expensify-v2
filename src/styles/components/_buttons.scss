@@ -22,14 +22,15 @@
 	}
 
 	&--link {
-		background: none;
+		background: none !important;
+		transform: none !important;
+		box-shadow: none !important;
 	}
 
 	&:hover {
 		cursor: pointer;
 		background-color: $blue-dark;
 		transform: translateY(-2px);
-		box-shadow: 0 .4rem 2rem #ccc;
 		box-shadow: 0px .8rem 1.5rem rgba(0, 0, 0, 0.1);
 	}
 

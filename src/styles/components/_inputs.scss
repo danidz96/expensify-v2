@@ -1,5 +1,5 @@
 .text-input {
-	border: 1px solid #cacccd;
+	border: 1px solid $grey;
 	height: 6rem;
 	padding: $m-size;
 	font-size: $font-size-medium;
@@ -25,7 +25,7 @@
 .DateRangePickerInput__withBorder,
 .SingleDatePickerInput__withBorder {
 	border-radius: $border-1;
-	border: 1px solid #cacccd;
+	border: 1px solid $grey;
 	height: 6rem;
 	padding-top: .6rem;
 }
