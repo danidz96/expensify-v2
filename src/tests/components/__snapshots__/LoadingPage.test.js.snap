@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LoadingPage correctly 1`] = `
+<div
+  className="loader"
+>
+  <Component
+    backColor="#cacccd"
+    frontColor="#2196f3"
+    loading={true}
+    size={80}
+    sizeUnit="px"
+  />
+</div>
+`;
