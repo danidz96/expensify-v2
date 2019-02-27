@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import selectExpenses from '../selectors/expenses';
 import selectExpensesTotal from '../selectors/expenses-total';
 
-export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
+export const ExpensesSummary = ({ expenseCount, expensesTotal, expensesLength }) => {
 	const expenseWord = expenseCount === 1 ? 'expense' : 'expenses';
 	const formattedExpensesTotal = numeral(expensesTotal / 100).format('0,0.[00]$');
 
@@ -15,6 +15,9 @@ export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
 				<h1 className="page-header__title">
 					Viewing <span>{expenseCount}</span> {expenseWord} totalling <span>{formattedExpensesTotal}</span>
 				</h1>
+				<span className="page-header__subtitle">
+					Showing {expenseCount} of {expensesLength} expenses.
+				</span>
 				<div className="page-header__actions">
 					<Link className="button button--action" to="/create">
 						Add Expense
@@ -29,6 +32,7 @@ const mapStateToProps = (state) => {
 	const visibleExpenses = selectExpenses(state.expenses, state.filters);
 
 	return {
+		expensesLength: state.expenses.length,
 		expenseCount: visibleExpenses.length,
 		expensesTotal: selectExpensesTotal(visibleExpenses)
 	};
